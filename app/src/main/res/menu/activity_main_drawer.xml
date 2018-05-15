@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/menu_action_icon"
+            android:title="Basic calculator" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/menu_action_icon"
+            android:title="Scientific calculator" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/menu_action_icon"
+            android:title="Base-N calculator" />
+
+    </group>
+
+    <item android:title="Probabilistics and statistics">
+        <menu>
+            <item
+                android:icon="@drawable/menu_action_icon"
+                android:title="Combinatorics" />
+
+            <item
+                android:icon="@drawable/menu_action_icon"
+                android:title="Probabilistics" />
+
+            <item
+                android:icon="@drawable/menu_action_icon"
+                android:title="Descriptive statistics" />
+
+            <item
+                android:icon="@drawable/menu_action_icon"
+                android:title="Complex statistics" />
+        </menu>
+    </item>
+
+    <item android:title="Miscellaneous">
+        <menu>
+            <item
+                android:icon="@drawable/settings_icon"
+                android:title="Settings" />
+
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/help_icon"
+                android:title="Help" />
+        </menu>
+    </item>
+
+</menu>
