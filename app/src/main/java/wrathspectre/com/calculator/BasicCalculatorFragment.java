@@ -1,6 +1,7 @@
 package wrathspectre.com.calculator;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.method.ScrollingMovementMethod;
@@ -21,12 +22,12 @@ public class BasicCalculatorFragment extends Fragment { //recent all history
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.basic_calculator_fragment, container, false);
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         getActivity().setTitle("Basic calculator");
@@ -47,10 +48,10 @@ public class BasicCalculatorFragment extends Fragment { //recent all history
         view.findViewById(R.id.seven).setOnClickListener(new digitsOnClickListener("7"));
         view.findViewById(R.id.eight).setOnClickListener(new digitsOnClickListener("8"));
         view.findViewById(R.id.nine).setOnClickListener(new digitsOnClickListener("9"));
-        view.findViewById(R.id.add).setOnClickListener(new operatorsOnClickListeners("+"));
-        view.findViewById(R.id.substract).setOnClickListener(new operatorsOnClickListeners("-"));
-        view.findViewById(R.id.multiply).setOnClickListener(new operatorsOnClickListeners("*"));
-        view.findViewById(R.id.divide).setOnClickListener(new operatorsOnClickListeners("/"));
+        view.findViewById(R.id.add).setOnClickListener(new operatorsOnClickListener("+"));
+        view.findViewById(R.id.substract).setOnClickListener(new operatorsOnClickListener("-"));
+        view.findViewById(R.id.multiply).setOnClickListener(new operatorsOnClickListener("*"));
+        view.findViewById(R.id.divide).setOnClickListener(new operatorsOnClickListener("/"));
 
         view.findViewById(R.id.comma).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +61,7 @@ public class BasicCalculatorFragment extends Fragment { //recent all history
                     hasComma = true;
                 }
 
-                else if(expression.length() > 0 && !expression.endsWith(",") && !hasComma) {
+                else if(expression.length() > 0 && !expression.endsWith(".") && !hasComma) {
                     expression += ".";
                     hasComma = true;
                 }
@@ -76,6 +77,9 @@ public class BasicCalculatorFragment extends Fragment { //recent all history
                 if(expression.length() > 0) {
                     if(expression.charAt(expression.length() - 1) == '.')
                         hasComma = false;
+
+                    else if(Arrays.asList(operators).contains(expression.charAt(expression.length() - 1))) // ???
+                        hasComma = true;
 
                     expression = expression.substring(0, expression.length() - 1);
                 }
@@ -127,10 +131,10 @@ public class BasicCalculatorFragment extends Fragment { //recent all history
         }
     }
 
-    private class operatorsOnClickListeners implements View.OnClickListener {
+    private class operatorsOnClickListener implements View.OnClickListener {
         private String operator;
 
-        private operatorsOnClickListeners(final String operator) {
+        private operatorsOnClickListener(final String operator) {
             this.operator = operator;
         }
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="9">
+    android:weightSum="10">
 
     <TextView
         android:id="@+id/expressionViewer"
@@ -13,9 +13,8 @@
         android:layout_height="0dp"
         android:layout_weight="3"
         android:layout_marginLeft="8dp"
-        android:layout_marginBottom="16dp"
         android:layout_marginRight="8dp"
-        android:gravity="bottom | right"
+        android:gravity="bottom|right"
         android:maxLines="10"
         android:scrollbars="vertical"
         android:scrollHorizontally="true"
@@ -27,7 +26,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:layout_marginLeft="8dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
         android:gravity="center"
         android:text="0.0"
         android:textSize="28sp"
@@ -36,17 +37,71 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_weight="6"
         android:background="@color/background"
         android:columnCount="4"
-        android:rowCount="5">
+        android:rowCount="9">
+
+        <GridLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="4"
+            android:layout_rowSpan="1"
+            android:background="#263238"
+            android:rowCount="1"
+            android:columnCount="4">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="?attr/selectableItemBackground"
+                android:text="MC"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="?attr/selectableItemBackground"
+                android:text="M+"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="?attr/selectableItemBackground"
+                android:text="M-"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="?attr/selectableItemBackground"
+                android:text="MR"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+
+        </GridLayout>
 
         <Button
             android:id="@+id/seven"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
+            android:layout_rowWeight="2"
+            android:layout_rowSpan="2"
             android:background="?attr/selectableItemBackground"
             android:text="7"
             android:textSize="24sp"
@@ -57,7 +112,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
+            android:layout_rowWeight="2"
+            android:layout_rowSpan="2"
             android:background="?attr/selectableItemBackground"
             android:text="8"
             android:textSize="24sp"
@@ -68,7 +124,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
+            android:layout_rowWeight="2"
+            android:layout_rowSpan="2"
             android:background="?attr/selectableItemBackground"
             android:text="9"
             android:textSize="24sp"
@@ -78,8 +135,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_rowSpan="4"
+            android:layout_rowWeight="2"
+            android:layout_rowSpan="8"
             android:columnCount="1"
             android:rowCount="5"
             android:background="@color/background_light">
@@ -101,7 +158,7 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 android:background="?attr/selectableItemBackground"
-                android:text="*"
+                android:text="@string/multiply_sign"
                 android:textSize="26sp"
                 android:textColor="@color/white"/>
 
@@ -112,7 +169,7 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 android:background="?attr/selectableItemBackground"
-                android:text="/"
+                android:text="@string/divide_sign"
                 android:textSize="26sp"
                 android:textColor="@color/white"/>
 
@@ -145,7 +202,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
+            android:layout_rowWeight="2"
+            android:layout_rowSpan="2"
             android:background="?attr/selectableItemBackground"
             android:text="4"
             android:textSize="24sp"
@@ -156,7 +214,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
+            android:layout_rowWeight="2"
+            android:layout_rowSpan="2"
             android:background="?attr/selectableItemBackground"
             android:text="5"
             android:textSize="24sp"
@@ -167,7 +226,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
+            android:layout_rowWeight="2"
+            android:layout_rowSpan="2"
             android:background="?attr/selectableItemBackground"
             android:text="6"
             android:textSize="24sp"
@@ -179,7 +239,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
+            android:layout_rowWeight="2"
+            android:layout_rowSpan="2"
             android:background="?attr/selectableItemBackground"
             android:text="1"
             android:textSize="24sp"
@@ -190,7 +251,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
+            android:layout_rowWeight="2"
+            android:layout_rowSpan="2"
             android:background="?attr/selectableItemBackground"
             android:text="2"
             android:textSize="24sp"
@@ -201,7 +263,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
+            android:layout_rowWeight="2"
+            android:layout_rowSpan="2"
             android:background="?attr/selectableItemBackground"
             android:text="3"
             android:textSize="24sp"
@@ -213,7 +276,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
+            android:layout_rowWeight="2"
+            android:layout_rowSpan="2"
             android:background="?attr/selectableItemBackground"
             android:text="."
             android:textSize="24sp"
@@ -224,7 +288,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
+            android:layout_rowWeight="2"
+            android:layout_rowSpan="2"
             android:background="?attr/selectableItemBackground"
             android:text="0"
             android:textSize="24sp"
@@ -235,7 +300,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
+            android:layout_rowWeight="2"
+            android:layout_rowSpan="2"
             android:background="@drawable/equal_rounded_button"
             android:text="="
             android:textSize="28sp"

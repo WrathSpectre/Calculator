@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
+        if (id == R.id.history_icon) {
             return true;
         }
 
@@ -72,13 +72,15 @@ public class MainActivity extends AppCompatActivity
 
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.basic_calculator) {
             fragment = new BasicCalculatorFragment();
-        } else if (id == R.id.nav_gallery) {
+        }
 
-        } else if (id == R.id.nav_slideshow) {
+        else if (id == R.id.scientific_calculator) {
+            fragment = new ScientificCalculatorFragment();
+        }
 
-        }  if (id == R.id.nav_send) {
+        else if (id == R.id.base_n_calculator) {
 
         }
 
